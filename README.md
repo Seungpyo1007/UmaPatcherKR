@@ -1,23 +1,21 @@
-# UmaPatcher
-<img align="right" width="96" height="96" src="app/src/main/res/mipmap-xxhdpi/ic_launcher.webp">
+<p align="center"> 
+  <a href="README.md">English</a> 
+  ·
+  <a href="README-KR.md">한국어</a> 
+</p>
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q3QEHRA)
-
-UmaPatcher is an UM:PD Hachimi mod patching tool for Android. Its main purpose is to provide you
-with translation patches within the game, among other features.
-
-For more information, please check out [Hachimi](https://github.com/Hachimi-Hachimi/Hachimi).
+[![](https://dcbadge.vercel.app/api/server/bGyA4Zsh4u)](https://discord.gg/bGyA4Zsh4u) ![](https://dcbadge.vercel.app/api/shield/731662377799647384)
+# UmaPatcher-KR
+Umamusme patching tool for Android (translation/game enhancement patch).
 
 # Requirements
-- Android 7.0 or above (***EXCEPT*** for Android 11, see [Hachimi#3](https://github.com/Hachimi-Hachimi/Hachimi/issues/3))
+- Android 9.0 or above
 
 # Download
-Download the latest release from the [Releases page](https://github.com/LeadRDRK/UmaPatcher/releases).
+Download the latest release from the [Releases page](https://github.com/Seungpyo1007/UmaPatcher-KR/releases).
 
 # How to use
 ## Patching the app
-The app can be patched with [Hachimi](https://github.com/Hachimi-Hachimi/Hachimi) which brings new
-features such as translations and tweaks to the game itself. You can pick whether to patch the
 APK file of the already installed app, or select an APK file and patch it.
 
 ### Rooted
@@ -35,15 +33,22 @@ you have to patch the updated APK to able to install it.
 **Note 1:** If you've already had an account on the game and you don't want to lose it when reinstalling
 the app, you can use the game's Data Link feature.
 
-**Note 2:** The signing key is unique for each installation of UmaPatcher. It is also a self-signed
+**Note 2:** The signing key is unique for each installation of MalDDalPatcher. It is also a self-signed
 key; during installation, Google Play Protect will warn you of installing an untrusted app. **You
 can safely ignore this and tap on More Info -> Install anyways to continue installation.**
 
-## Setting up Hachimi
-Just open the patched app that you've installed and follow Hachimi's first time setup wizard.
-
-**Tip:** You can access the menu by pressing the Volume up + Volume down keys on your device at the
-same time.
-
 # License
 [Apache License 2.0](LICENSE)
+
+# Thanks to
+Translator : [fprtkdl](https://github.com/fprtkdl) | [vanaBV](https://github.com/vanaBV)
+
+[UmaPatcher](https://github.com/LeadRDRK/UmaPatcher)
+
+[umamusume-localify](https://github.com/GEEKiDoS/umamusume-localify)
+
+[tlg](https://github.com/MinamiChiwa/Trainers-Legend-G)
+
+[db-translate project](https://github.com/noccu/umamusume-db-translate)
+
+[umamusume-localify-android](https://github.com/Kimjio/umamusume-localify-android)
