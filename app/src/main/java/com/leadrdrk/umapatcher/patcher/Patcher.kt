@@ -1,6 +1,8 @@
 package com.leadrdrk.umapatcher.patcher
 
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteException
 import android.util.Log
 import com.leadrdrk.umapatcher.R
 import com.leadrdrk.umapatcher.core.GameChecker
@@ -92,6 +94,20 @@ abstract class Patcher(
             log(context.getString(R.string.root_required))
             return false
         }
+        if (!testDirectory(GameChecker.filesDir.resolve("dat").path)) {
+            log(context.getString(R.string.game_data_not_found))
+            return false
+        }
         return true
+    }
+
+    protected fun openDatabase(path: String, flags: Int = SQLiteDatabase.OPEN_READWRITE): SQLiteDatabase? {
+        return try {
+            SQLiteDatabase.openDatabase(path, null, flags)
+        }
+        catch (ex: SQLiteException) {
+            logException(ex)
+            null
+        }
     }
 }

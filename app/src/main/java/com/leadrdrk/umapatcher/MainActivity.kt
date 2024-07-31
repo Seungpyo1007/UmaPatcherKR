@@ -1,6 +1,7 @@
 package com.leadrdrk.umapatcher
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
@@ -35,11 +36,15 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
+import com.leadrdrk.umapatcher.core.PrefKey
 import com.leadrdrk.umapatcher.core.UpdateChecker
+import com.leadrdrk.umapatcher.core.getPrefValue
+import com.leadrdrk.umapatcher.git.GitRepo
 import com.leadrdrk.umapatcher.ui.component.SimpleOkCancelDialog
 import com.leadrdrk.umapatcher.ui.screen.BottomBarDestination
 import com.leadrdrk.umapatcher.ui.screen.NavGraphs
@@ -53,6 +58,7 @@ import com.ramcosta.composedestinations.animations.rememberAnimatedNavHostEngine
 import com.ramcosta.composedestinations.navigation.popBackStack
 import com.ramcosta.composedestinations.utils.isRouteOnBackStackAsState
 import com.topjohnwu.superuser.Shell
+import kotlinx.coroutines.launch
 
 private val rootInitialized = mutableStateOf(false)
 
@@ -82,6 +88,9 @@ class MainActivity : ComponentActivity() {
 
     private fun appInit() {
         requestPermissions()
+        lifecycleScope.launch {
+            gitStartupInit()
+        }
 
         // Init work directory
         workDir.mkdir()
@@ -91,6 +100,17 @@ class MainActivity : ComponentActivity() {
         Shell.getShell { rootInitialized.value = true }
     }
 
+    @SuppressLint("InlinedApi")
+    private suspend fun gitStartupInit() {
+        // Init git repo
+        GitRepo.init(applicationContext)
+
+        // Start syncing (only if the repo is already cloned)
+        if (getPrefValue(PrefKey.SYNC_ON_STARTUP) as Boolean && GitRepo.ready.value) {
+            startRepoSync()
+        }
+    }
+
     private fun requestPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val launcher = registerForActivityResult(
@@ -98,6 +118,10 @@ class MainActivity : ComponentActivity() {
             ) {}
             launcher.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
+    }
+
+    fun startRepoSync() {
+        GitRepo.sync(applicationContext, lifecycleScope)
     }
 
     fun useKeepScreenOn(callback: () -> Unit) {
