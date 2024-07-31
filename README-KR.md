@@ -5,7 +5,7 @@
 </p>
 
 [![](https://dcbadge.vercel.app/api/server/bGyA4Zsh4u)](https://discord.gg/bGyA4Zsh4u) ![](https://dcbadge.vercel.app/api/shield/731662377799647384)
-# UmaPatcher-KR
+# UmaPatcherKR
 Android용 Umamusme 패치 도구(번역/게임 강화 패치).
 
 # 요구사항
@@ -33,7 +33,7 @@ Android용 Umamusme 패치 도구(번역/게임 강화 패치).
 **참고 1:** 게임에 이미 계정이 있고 재설치 시 해당 계정을 잃고 싶지 않은 경우
 앱에서는 게임의 데이터 링크 기능을 사용할 수 있습니다.
 
-**참고 2:** 서명 키는 MalDDalPatcher 설치마다 고유합니다. 그것도 자체 서명으로
+**참고 2:** 서명 키는 UmaPatcherKR 설치마다 고유합니다. 그것도 자체 서명으로
 열쇠; 설치 중에 Google Play Protect는 신뢰할 수 없는 앱을 설치했다는 경고를 표시합니다. **너
 이를 무시하고 추가 정보 -> 설치를 탭하여 설치를 계속할 수 있습니다.**
 

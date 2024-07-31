@@ -9,7 +9,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.leadrdrk.umapatcher"
+        applicationId "com.leadrdrk.umapatcherkr"
         minSdk 24
         targetSdk 34
         versionCode 4
@@ -51,7 +51,7 @@ android {
             excludes += "net/jpountz/**"
         }
     }
-    namespace 'com.leadrdrk.umapatcher'
+    namespace 'com.leadrdrk.umapatcherkr'
 }
 
 //kotlin {
