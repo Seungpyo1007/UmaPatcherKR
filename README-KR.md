@@ -6,7 +6,7 @@
 
 [![](https://dcbadge.vercel.app/api/server/bGyA4Zsh4u)](https://discord.gg/bGyA4Zsh4u) ![](https://dcbadge.vercel.app/api/shield/731662377799647384)
 # UmaPatcherKR
-Android용 Umamusme 패치 도구(번역/게임 강화 패치).
+Android용 Umamusme-jp 한국어 패치 도구(한국어 번역/게임 강화 패치).
 
 # 요구사항
 - 안드로이드 9.0 이상
