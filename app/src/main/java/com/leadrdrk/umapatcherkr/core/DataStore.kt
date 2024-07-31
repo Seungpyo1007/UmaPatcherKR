@@ -26,7 +26,7 @@ object PrefKey {
 
 val defaultValues = mapOf(
     Pair(PrefKey.GIT_CLONE_COMPLETED, false),
-    Pair(PrefKey.GIT_REMOTE, "https://github.com/LeadRDRK/umamusu-translate.git"),
+    Pair(PrefKey.GIT_REMOTE, "https://github.com/LeadRDRK/umamusu-translate"),
     Pair(PrefKey.GIT_BRANCH, "master"),
     Pair(PrefKey.SYNC_ON_STARTUP, true),
     Pair(PrefKey.CHECK_FOR_UPDATES, true),

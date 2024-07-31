@@ -75,7 +75,7 @@ object GitRepo {
                 rawSync(context)
             }
             catch (e: Exception) {
-                Log.e("UmaPatcher", "JGit exception", e)
+                Log.e("UmaPatcherKR", "JGit exception", e)
                 val notificationManager = NotificationManagerCompat.from(context)
                 notificationManager.cancel(NotificationId.GitSyncProgress.ordinal)
                 val builder = context.createNotificationBuilder(
